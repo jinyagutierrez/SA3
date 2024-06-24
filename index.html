@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Pricing Page - Netflix Theme</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqk1w2/knoG80k332eYXYlOjLiPFYcKf6yY2Z83ףq4S+vq4zN94sF8twcQY7q8q+8KQzHGNc" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #141414;
+            color: #fff;
+        }
+
+        .navbar {
+            background-color: #141414;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 2px solid #e50914;
+        }
+
+        .navbar-brand {
+            color: #e50914;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar-nav li {
+            margin-right: 20px;
+        }
+
+        .navbar-nav a {
+            color: #fff;
+            transition: color 0.3s;
+        }
+
+        .navbar-nav a:hover {
+            color: #e50914;
+        }
+
+        .navbar-toggler {
+            border: none;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="rgba%28255, 255, 255, 0.5%29" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+        }
+
+        .header {
+            background-image: url('https://mebincdn.themebin.com/1664271579476.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            text-align: center;
+            color: #fff;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .header p {
+            font-size: 24px;
+        }
+
+        .pricing-section {
+            padding: 50px 0;
+        }
+
+        .pricing-table {
+            background-color: #1c1c1c;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+            border: 1px solid #e50914;
+        }
+
+        .pricing-table h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e50914;
+            margin-bottom: 15px;
+        }
+
+        .pricing-table .price {
+            font-size: 48px;
+            font-weight: bold;
+            color: #e50914;
+            margin-bottom: 10px;
+        }
+
+        .pricing-table .period {
+            font-size: 16px;
+            color: #ccc;
+        }
+
+        .pricing-table ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .pricing-table ul li {
+            padding: 10px 0;
+            color: #ccc;
+            border-bottom: 1px solid #333;
+        }
+
+        .pricing-table ul li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-table button {
+            background-color: #e50914;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .pricing-table button:hover {
+            background-color: #b2070a;
+        }
+
+        .icon-section {
+            padding: 50px 0;
+            text-align: center;
+            background-color: #1c1c1c;
+        }
+
+        .icon-section h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e50914;
+            margin-bottom: 30px;
+        }
+
+        .icon-section i {
+            font-size: 48px;
+            color: #fff;
+            margin: 20px;
+            transition: color 0.3s;
+        }
+
+        .icon-section i:hover {
+            color: #b2070a;
+        }
+
+        .icon-section p {
+            font-size: 18px;
+            color: #ccc;
+        }
+
+        .cta-section {
+            background-color: #1c1c1c;
+            color: #e50914;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #e50914;
+        }
+
+        .cta-section p {
+            color: #ccc;
+        }
+
+        .cta-section button {
+            background-color: #e50914;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .cta-section button:hover {
+            background-color: #b2070a;
+            color: #fff;
+        }
+
+        .footer {
+            background-color: #141414;
+            color: #ccc;
+            padding: 20px;
+            text-align: center;
+            border-top: 2px solid #e50914;
+        }
+
+        .footer p {
+            margin: 0;
+            color: #ccc;
+        }
+
+        .footer-social {
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            color: #e50914;
+            margin-right: 20px;
+            transition: color 0.3s;
+        }
+
+        .footer-social a:hover {
+            color: #b2070a;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">NETFLIX</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pricing">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home">
+    <header class="header">
+        <div class="container">
+            <h1>Welcome to NETFLIX</h1>
+            <p>Get started with our shows</p>
+        </div>
+    </header>
+    </section>
+
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Choose the Plan That's Right for You</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="pricing-table">
+                        <h2>Basic</h2>
+                        <div class="price">$25</div>
+                        <div class="period">Per Month</div>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Unlimited ad-free movies, TV shows, and mobile games</li>
+                            <li><i class="fas fa-check"></i> Watch on 1 supported device at a time</li>
+                            <li><i class="fas fa-check"></i> Downloads available on 1 supported device at a time</li>
+                        </ul>
+                        <button>Sign Up</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pricing-table">
+                        <h2>Standard</h2>
+                        <div class="price">$55</div>
+                        <div class="period">Per Month</div>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Unlimited ad-free movies, TV shows, and mobile games</li>
+                            <li><i class="fas fa-check"></i> Watch on 2 supported devices at a time</li>
+                            <li><i class="fas fa-check"></i> Downloads available on 2 supported devices at a time</li>
+                            <li><i class="fas fa-check"></i> HD available</li>
+                        </ul>
+                        <button>Sign Up</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pricing-table">
+                        <h2>Premium</h2>
+                        <div class="price">$75</div>
+                        <div class="period">Per Month</div>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Unlimited ad-free movies, TV shows, and mobile games</li>
+                            <li><i class="fas fa-check"></i> Watch on 4 supported devices at a time</li>
+                            <li><i class="fas fa-check"></i> Downloads available on 6 supported devices at a time</li>
+                            <li><i class="fas fa-check"></i> HD and Ultra HD available</li>
+                        </ul>
+                        <button>Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="icon-section">
+        <div class="container">
+            <h2>Our Features</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <i class="fas fa-film"></i>
+                    <p>Stream the latest movies and TV shows in HD.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-tv"></i>
+                    <p>Enjoy an extensive library of content.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-user-friends"></i>
+                    <p>Create multiple profiles for your family.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="cta-section">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Learn more about our journey and what drives us to provide the best entertainment experience.</p>
+            <button>Read More</button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 NETFLIX. All rights reserved.</p>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
